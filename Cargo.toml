@@ -2,7 +2,7 @@
 name = "norma2turing"
 version = "0.1.0"
 authors = ["Kia Strawberries <66382675+uwukia@users.noreply.github.com>"]
-edition = "2018"
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "rlib"]

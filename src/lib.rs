@@ -1,5 +1,7 @@
 mod utils;
 
+mod logic;
+
 use wasm_bindgen::prelude::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -8,12 +10,29 @@ use wasm_bindgen::prelude::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen]
-extern {
-    fn alert(s: &str);
+#[wasm_bindgen(start)]
+pub fn main() -> Result<(), JsValue> {
+    Ok(())
 }
 
+#[wasm_bindgen(getter_with_clone)]
+pub struct CompilationResult {
+    pub successful: bool,
+    pub info: String,
+    pub filedata: String,
+    pub filename: String,
+}
+
+/// Returns: (compiled_successfully, compilation_info, compiled_file)
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, norma2turing!");
+pub fn compile_code(input: &str) -> CompilationResult {
+    logic::compile(input)
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
 }
