@@ -55,8 +55,8 @@
 /******/ 		"../pkg/norma2turing_bg.wasm": function() {
 /******/ 			return {
 /******/ 				"./norma2turing_bg.js": {
-/******/ 					"__wbg_alert_f003ab8a8f889fea": function(p0i32,p1i32) {
-/******/ 						return installedModules["../pkg/norma2turing_bg.js"].exports["__wbg_alert_f003ab8a8f889fea"](p0i32,p1i32);
+/******/ 					"__wbindgen_throw": function(p0i32,p1i32) {
+/******/ 						return installedModules["../pkg/norma2turing_bg.js"].exports["__wbindgen_throw"](p0i32,p1i32);
 /******/ 					}
 /******/ 				}
 /******/ 			};
@@ -159,7 +159,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/norma2turing_bg.wasm":"0633a1ee482ec34ea02d"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/norma2turing_bg.wasm":"8e36803912e7cebd0717"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
