@@ -5,7 +5,7 @@
     <title>Norma2 → Turing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <style>
         html body {
             margin: 0;
@@ -22,7 +22,7 @@
             transform: translate(0, -50%);
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: stretch;
         }
 
         .code {
@@ -32,7 +32,6 @@
         .wrapper {
             margin: 10px;
             width: 340px;
-            height: 710px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -46,9 +45,14 @@
             font-family: 'Roboto Mono', monospace;
             background-color: #2b2b2b;
             color: #c7c8c9;
+            font-size: 0.9em;
         }
 
         button {
+            user-select: none;
+        }
+
+        button#save {
             background-color: #455270;
             border: none;
             text-decoration: none;
@@ -59,7 +63,7 @@
             cursor: pointer;
         }
 
-        button:disabled {
+        button#save:disabled {
             cursor: default;
             background-color: #2f3950;
             color: #8b8b8b;
@@ -82,12 +86,114 @@
             margin: 0;
         }
 
+        #sideWrapper {
+            position: absolute;
+            display: flex;
+            align-items: flex-start;
+            z-index: 2;
+        }
+
+        #sidePanel {
+            position: relative;
+            width: 390px;
+            height: 100vh;
+            margin-left: -410px;
+            background-color: #3b3b3b;
+            transition: margin-left 0.8s;
+            border-right: 1px black solid;
+            padding-left: 10px;
+            padding-right: 10px;
+            overflow-y: scroll;
+        }
+
+        #sidePanel h2 {
+            font-size: 1.8em;
+        }
+
+        #sidePanel h3 {
+            font-size: 1.4em;
+            font-weight: normal;
+        }
+
+        #sidePanel::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        #sidePanel::-webkit-scrollbar-track {
+            outline: 1px solid #3b3b3b;
+            border-radius: 6px;
+        }
+        
+        #sidePanel::-webkit-scrollbar-thumb {
+            background-color: #686868;
+            border-radius: 6px;
+        }
+
+        #sidePanel pre {
+            font-size: 1.2em;
+            background-color: #363636;
+            color: #c7c8c9;
+            border: rgb(155, 155, 155) 1px solid;
+            padding: 10px;
+        }
+
+        button#sideGrabber {
+            width: 70px;
+            height: 60px;
+            line-height: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 40px;
+            cursor: pointer;
+            background-color: #3b3b3b;
+            color: #b8b8b8;
+            border: 0;
+            border-left: 1px #3b3b3b solid;
+            border-right: 1px black solid;
+            border-bottom: 1px black solid;
+        }
+
+        button#langToggle {
+            background-color: #455270;
+            width: 70px;
+            height: 70px;
+            line-height: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 35px;
+            border: 0;
+            position: absolute;
+            color: #b8b8b8;
+            cursor: pointer;
+            top: 10px;
+            right: 10px;
+            border-radius: 35px;
+            z-index: 3;
+        }
+
+        footer {
+            display: flex;
+            width: 100vw;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        footer p {
+            margin-bottom: 0.5em;
+        }
+
         </style>
 </head>
 <body>
+    <div id="sideWrapper">
+        <div id="sidePanel">
+
+        </div>
+        <button id="sideGrabber" type="button">?</button>
+    </div>
+    <button id="langToggle">EN</button>
     <div class="main">
         <div class="code">
-            <textarea cols="40" rows="40" id="norma">// insert code</textarea>
+            <textarea spellcheck="false" cols="40" rows="40" id="norma">// maqturing</textarea>
         </div>
         <div class="wrapper">
             <div class="compilationResult">
@@ -98,6 +204,10 @@
             <button type="button" id="save">Save</button>
         </div>
     </div>
+    <footer>
+        <p id="footerNote">Built on Rust</p>
+        <p>🦀</p>
+    </footer>
     <script src="./bootstrap.js"></script>
     <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
 </body>
