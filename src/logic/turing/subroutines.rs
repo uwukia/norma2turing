@@ -94,8 +94,11 @@ const fn parse_cell(input: [u8; 3]) -> Option<TransitionNode> {
 mod tests {
     #[test]
     fn works() {
-        for node in super::INC_X {
-            println!("{:?}", node);
-        }
+        super::map3([b"   0XD1XD2XE", b"      1YD2YE", b"f@D2XE2YE   "]);
+        super::map2([b"   0XD0YD1YE", b"f@D1XE1YE   "]);
+        super::map5([b"   1XD4YE4-E", b"   1XD1YD2-E", b"   4-E3-E   ", b"   4YE3YE   ", b"f@D4XE      "]);
+        super::map3([b"   0XD0YD1-E", b"f@D2XE2-E   ", b"f@D2XE2YE   "]);
+        super::map3([b"   2XE1YE1-E", b"f@D         ", b"f@D         "]);
+        super::map3([b"   0XD2YE1-E", b"f@D1XE      ", b"f@D2XE      "]);
     }
 }

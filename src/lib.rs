@@ -10,15 +10,13 @@ use wasm_bindgen::prelude::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-#[wasm_bindgen(start)]
-pub fn main() -> Result<(), JsValue> {
-    Ok(())
-}
-
 #[wasm_bindgen(getter_with_clone)]
 pub struct CompilationResult {
     pub successful: bool,
-    pub info: String,
+    pub titlecode: String,
+    pub errorcode: String,
+    pub showcode: String,
+    pub timetaken: String,
     pub filedata: String,
     pub filename: String,
 }
@@ -33,6 +31,6 @@ pub fn compile_code(input: &str) -> CompilationResult {
 mod tests {
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        super::compile_code("");
     }
 }

@@ -1,0 +1,74 @@
+{
+    "insert_language_here": {
+        "resultTitle": {
+            "OK": "",
+            "ERR": "",
+            "WARN": ""
+        },
+        "errorMessage": {
+            "OK0": [""],
+            "W00": [""],
+            "E01": ["", ""],
+            "E02": ["", ""],
+            "E03": ["", ""],
+            "E04": ["", ""],
+            "E05": ["", ""],
+            "E06": ["", ""],
+            "E07": ["", ""],
+            "E08": ["", ""],
+            "EL2": ["", "", "", ""],
+            "ECI": ["", "", ""],
+            "ETM": [""]
+        },
+        "saveButton": "",
+        "footerNote": ""
+    },
+    "EN": {
+        "resultTitle": {
+            "OK": "Ok",
+            "ERR": "Error",
+            "WARN": "Warning"
+        },
+        "errorMessage": {
+            "OK0": [""],
+            "W00": ["The instructions labeled above have been ignored for not being referenced anywhere."],
+            "E01": ["Missing instruction label (line #", ")"],
+            "E02": ["Missing semicolon ':' after label (line #", ")"],
+            "E03": ["Invalid instruction (expected 'inc', 'dec', or 'zero') (line #", ")"],
+            "E04": ["Invalid register (expected 'X' or 'Y') (line #", ")"],
+            "E05": ["Missing `goto` clause after instruction (line #", ")"],
+            "E06": ["Missing label declaration after `goto` (line #", ")"],
+            "E07": ["Missing `else` clause, expected for `zero` instructions (line #", ")"],
+            "E08": ["Missing label declaration after `else` (line #", ")"],
+            "EL2": ["Two instructions have been declared with the same label `", "` (on lines #", " and #", ")"],
+            "ECI": ["Instruction `", "` calls itself (line #", ")"],
+            "ETM": ["Too many instructions (maximum limit of 10,000)"]
+        },
+        "saveButton": "Save",
+        "footerNote": "Built on Rust"
+    },
+    "PT": {
+        "resultTitle": {
+            "OK": "Ok",
+            "ERR": "Erro",
+            "WARN": "Aviso"
+        },
+        "errorMessage": {
+            "OK0": [""],
+            "W00": ["As instruções acima foram ignoradas por não são referenciadas no código"],
+            "E01": ["Instrução possui rótulo inválido ou inexistente (linha #", ")"],
+            "E02": ["Faltando dois pontos ':' após o rótulo (linha #", ")"],
+            "E03": ["Instrução inválida (esperava 'inc', 'dec', ou 'zero') (linha #", ")"],
+            "E04": ["Registrador inválido (esperava 'X' ou 'Y') (linha #", ")"],
+            "E05": ["Faltando `goto` após a instrução (linha #", ")"],
+            "E06": ["Rótulo `goto` inválido ou inexistente (linha #", ")"],
+            "E07": ["Faltando `else`, esperado em operações do tipo `zero` (linha #", ")"],
+            "E08": ["Rótulo `else` inválido ou inexistente (linha #", ")"],
+            "EL2": ["Há duas instruções declaradas com o mesmo rótulo `", "` (linhas #", " e #", ")"],
+            "ECI": ["A instrução `", "` faz uma chamada para si mesma (linha #", ")"],
+            "ETM": ["O programa possui instruções demais (limite máximo de 10 mil)"]
+        },
+        "saveButton": "Salvar",
+        "footerNote": "Feito em Rust"
+    }
+}

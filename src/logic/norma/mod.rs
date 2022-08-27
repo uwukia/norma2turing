@@ -29,6 +29,10 @@ impl<'s> NormaRoutine<'s> {
 
         let removed_instructions = warn_unused(&mut vec)?;
 
+        if vec.len() > 10_000 {
+            return Err(NormaParseError::TooManyInstructions)
+        }
+
         Ok((Self { inner: vec }, removed_instructions))
     }
 
@@ -120,6 +124,20 @@ pub enum NormaParseError<'s> {
     LabelDeclaredTwice(&'s str, u16, u16),
     // LabelDoesNotExist(&'s str, u16),
     InstructionCallsItself(&'s str, u16),
+    TooManyInstructions,
+}
+
+impl<'s> NormaParseError<'s> {
+    pub fn index_and_display(&self) -> (String, String) {
+        let index = self.to_string();
+        let display = if let Self::Parse(parse_error) = self {
+            parse_error.display_code()
+        } else {
+            String::new()
+        };
+
+        (index, display)
+    }
 }
 
 impl<'s> From<ParseError<'s>> for NormaParseError<'s> {
